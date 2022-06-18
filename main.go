@@ -29,6 +29,7 @@ func updatePermissions(files []string, permission os.FileMode) {
 		log.Printf("Updated permissions for [%s] with [%v]", fpath, permission)
 		time.Sleep(time.Millisecond * 500)
 	}
+
 }
 
 func getUserHome() string {
@@ -53,7 +54,7 @@ func getKeysPath(basePath string) ([]string, []string) {
 	}
 
 	for _, file := range fileList {
-		if strings.Contains(file, "id_rsa") {
+		if strings.Contains(file, "id_rsa") || strings.Contains(file, "id_ed25519") {
 
 			if strings.HasSuffix(file, ".pub") {
 				pubKeys = append(pubKeys, file)

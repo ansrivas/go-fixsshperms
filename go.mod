@@ -1,3 +1,3 @@
-module github.com/ansrivas/go-fixsshpermissions
+module github.com/ansrivas/go-fixsshperms
 
-go 1.14
+go 1.18
